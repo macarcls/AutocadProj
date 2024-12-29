@@ -1,0 +1,30 @@
+﻿<Window x:Class="acTest2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:acTest2"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="650" Height="650" Width="1000">
+    <Grid Background="#949494">
+        <Border MinWidth="400" MinHeight="550" Margin="15" Background="White" CornerRadius="15" Padding="30" VerticalAlignment="Center"  HorizontalAlignment="Stretch">
+            <Border.Effect>
+                <DropShadowEffect Color="White" BlurRadius="25" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel HorizontalAlignment="Stretch" >
+                <TextBox x:Name="Model" KeyDown="TextBox_PreviewKeyDown"  HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="model" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="col_flanci_cold" KeyDown="TextBox_PreviewKeyDown2" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="nozzles cold" materialDesign:HintAssist.HintHorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="col_flanci_hot" KeyDown="TextBox_PreviewKeyDown3" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="nozzles hot " materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="plates" KeyDown="TextBox_PreviewKeyDown4" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="count of plates" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="partitc" KeyDown="TextBox_PreviewKeyDown5" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="count of partitions hot" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="partith" KeyDown="TextBox_PreviewKeyDown6" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="count of partitions cold" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <TextBox x:Name="Type" KeyDown="TextBox_PreviewKeyDown7" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
+                <Button HorizontalAlignment="Center" Content="generate" FontSize="16" FontStyle="Normal" FontWeight="UltraBold" Click="formula" Margin="0,0,0,10" Width="128" Background="#ebe8e8" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                <Button HorizontalAlignment="Center" Content="Open" FontSize="16" FontStyle="Normal" FontWeight="UltraBold" Width="128" Background="#ebe8e8" Style="{StaticResource MaterialDesignOutlinedButton}" Click="Button_Click"/>
+            </StackPanel>
+            
+        </Border>
+
+    </Grid>
+</Window>
