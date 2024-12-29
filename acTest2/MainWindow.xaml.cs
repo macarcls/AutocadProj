@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,19 +18,18 @@ namespace acTest2
     /// </summary>
     public partial class MainWindow : Window
     {
+        Graphic _graphicModel;
         public MainWindow()
         {
             InitializeComponent();
-            /*Button button = new Button();
-            button.Margin = new System.Windows.Thickness(78,352,552,41);
-            button.Content = "Generate";
-            button.Click += formula;
-            generate.Children.Add(button);*/ 
+            _graphicModel = new Graphic();
+            DataContext = _graphicModel;
+            
         }
 
         public void formula(object sender, RoutedEventArgs e)
         {
-            int count_pl = 120; //int.Parse(plastini.Text);
+            /*int count_pl = 120; //int.Parse(plastini.Text);
             int convXY = 350; //int.Parse(Name.Text);
             int z = count_pl + (count_pl * 5) + (80 * 2);
             int x = convXY;
@@ -38,15 +38,25 @@ namespace acTest2
             int Hot_side_count_of_nozzles = int.Parse(col_flanci_hot.Text);
             int nozzle_d = 120;
             int peregor_hot = 2;
-            int peregor_cold = 2;
-
+            int peregor_cold = 2;*/
+            Graphic graphic = new Graphic 
+            { 
+                x = _graphicModel.x * 10,
+                y = _graphicModel.x * 10,
+                count_pl = _graphicModel.count_pl,
+                peregor_hot = _graphicModel.peregor_hot,
+                peregor_cold = _graphicModel.peregor_cold,
+                cold_side_count_of_nozzles = _graphicModel.cold_side_count_of_nozzles,
+                Hot_side_count_of_nozzles = _graphicModel.Hot_side_count_of_nozzles,
+                nozzle_d = _graphicModel.nozzle_d
+            };
             if (Type.Text == "V")
             {
-                Graphic.create_V(x, y, z, nozzle_d, peregor_hot, peregor_cold, cold_side_count_of_nozzles, Hot_side_count_of_nozzles);
+                graphic.create_V();
             }
             else if (Type.Text == "H")
             {
-                Graphic.create_H(x, y, z, nozzle_d, peregor_hot, peregor_cold, cold_side_count_of_nozzles, Hot_side_count_of_nozzles);
+                graphic.create_H();
             }
             MessageBox.Show("done!");
         }
@@ -186,8 +196,6 @@ namespace acTest2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            File.Open(System.IO.Path.Combine(Environment.CurrentDirectory,"\\sample1.dxf"), FileMode.Open);
-            MessageBox.Show(Environment.CurrentDirectory);
         }
     }
 }

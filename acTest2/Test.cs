@@ -9,13 +9,26 @@ namespace acTest2
 {
     internal class Graphic
     {
-        public static void create_V(int x, int y, int z, int nozzle_d, int peregor_hot,int peregor_cold ,int cold_side_count_of_nozzles, int Hot_side_count_of_nozzles)
+        public int x { get; set; }
+        public int y { get; set; } 
+        public int nozzle_d { get; set; } 
+        public int peregor_hot { get; set; }
+        public int peregor_cold { get; set; }
+        public int cold_side_count_of_nozzles { get; set; } 
+        public int Hot_side_count_of_nozzles { get; set; }
+        public int count_pl { get; set; }
+        public void create_V()
         {
             // your DXF file name
             string file = "C:\\Users\\macar\\source\\repos\\WpfApp9\\acTest2\\sample1.dxf";
 
             // create a new document, by default it will create an AutoCad2000 DXF version
             DxfDocument doc = new DxfDocument();
+            //var layout = new Layout("layout");
+            //layout.BasePoint = new Vector3(0, 0, 0);
+            //doc.Layouts.Add(layout);
+            //doc.Entities.ActiveLayout = layout.Name;
+            int z = count_pl + (count_pl * 5) + (80 * 2);
             // Hook:
             List<int[]> hookFaces = new List<int[]>()
             {
@@ -656,8 +669,10 @@ namespace acTest2
                                             0, 0, 0, 1));*/
             stand_m.TransformBy(Matrix4.Scale(1.5));
             stand_m.TransformBy(Matrix4.Translation(-(((x*1.5)-x)/2),-(((x*1.5)-x)/2),0));
-
             //  Add Entities:
+            
+            
+
             doc.Entities.Add(mesh);
             doc.Entities.Add(mesh1);
             doc.Entities.Add(mesh2);
@@ -665,6 +680,7 @@ namespace acTest2
             doc.Entities.Add(top_mesh);
             doc.Entities.Add(bot_mesh);
             doc.Entities.Add(stand_m);
+            
             //doc.Entities.Add(nozzle);
             //doc.Entities.Add(nozzle1_2);
             //doc.Entities.Add(nozzle_hot);
@@ -673,11 +689,9 @@ namespace acTest2
             //  Save to file:
             doc.Save(file);
         }
-        public static void create_H(int x, int y, int z, int nozzle_d, int peregor_hot,int peregor_cold ,int cold_side_count_of_nozzles, int Hot_side_count_of_nozzles)
         {
             // your DXF file name
             string file = Path.Combine(Environment.CurrentDirectory,@"sample1.dxf");
-
             // create a new document, by default it will create an AutoCad2000 DXF version
             DxfDocument doc = new DxfDocument();
             // bolt:
