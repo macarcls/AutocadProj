@@ -689,7 +689,9 @@ namespace acTest2
             //  Save to file:
             doc.Save(file);
         }
+        public void create_H()
         {
+            int z = count_pl + (count_pl * 5) + (80 * 2);
             // your DXF file name
             string file = Path.Combine(Environment.CurrentDirectory,@"sample1.dxf");
             // create a new document, by default it will create an AutoCad2000 DXF version
