@@ -20,7 +20,7 @@ namespace acTest2
         public void create_V()
         {
             // your DXF file name
-            string file = "C:\\Users\\macar\\source\\repos\\WpfApp9\\acTest2\\sample1.dxf";
+            string file = Path.Combine(Environment.CurrentDirectory, @"sample1.dxf");
 
             // create a new document, by default it will create an AutoCad2000 DXF version
             DxfDocument doc = new DxfDocument();
