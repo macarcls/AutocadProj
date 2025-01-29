@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace acTest2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         Graphic _graphicModel;
@@ -29,16 +26,6 @@ namespace acTest2
 
         public void formula(object sender, RoutedEventArgs e)
         {
-            /*int count_pl = 120; //int.Parse(plastini.Text);
-            int convXY = 350; //int.Parse(Name.Text);
-            int z = count_pl + (count_pl * 5) + (80 * 2);
-            int x = convXY;
-            int y = x;
-            int cold_side_count_of_nozzles = int.Parse(col_flanci_cold.Text);
-            int Hot_side_count_of_nozzles = int.Parse(col_flanci_hot.Text);
-            int nozzle_d = 120;
-            int peregor_hot = 2;
-            int peregor_cold = 2;*/
             Graphic graphic = new Graphic 
             { 
                 x = _graphicModel.x * 10,
@@ -192,10 +179,6 @@ namespace acTest2
                 e.Handled = true;
                 partith.Focus();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
