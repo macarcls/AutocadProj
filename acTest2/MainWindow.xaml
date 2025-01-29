@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:acTest2"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="650" Height="650" Width="1000">
+        Title="MainWindow" MinHeight="700" Height="650" Width="1000">
     <Grid Background="#949494">
         <Border MinWidth="400" MinHeight="550" Margin="15" Background="White" CornerRadius="15" Padding="30" VerticalAlignment="Center"  HorizontalAlignment="Stretch">
             <Border.Effect>
@@ -23,7 +23,6 @@
                 
                 <TextBox x:Name="Type" KeyDown="TextBox_PreviewKeyDown7" HorizontalAlignment="Left" FontSize="16" materialDesign:HintAssist.Hint="Type" materialDesign:HintAssist.HintHorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedTextBox}" Width="200" Margin="0 0 0 10"/>
                 <Button HorizontalAlignment="Center" Content="generate" FontSize="16" FontStyle="Normal" FontWeight="UltraBold" Click="formula" Margin="0,0,0,10" Width="128" Background="#ebe8e8" Style="{StaticResource MaterialDesignOutlinedButton}"/>
-                <Button HorizontalAlignment="Center" Content="Open" FontSize="16" FontStyle="Normal" FontWeight="UltraBold" Width="128" Background="#ebe8e8" Style="{StaticResource MaterialDesignOutlinedButton}" Click="Button_Click"/>
             </StackPanel>
             
         </Border>
